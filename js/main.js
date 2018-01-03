@@ -50,7 +50,13 @@ $(function(){
           nextArrow:'.arrow-next'
     });
     $('#hero').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        $('.slick-active').next().find('video')[0].play(); 
+
+        if( $('.slick-active').next().hasClass('has-video') )
+
+        $('.slick-active').find('video')[0].pause();
+        $('.slick-active').next().find('video')[0].play();
+        $('.slick-active').prev().find('video')[0].play();
+
     });
     
                  
@@ -94,10 +100,14 @@ $(function(){
             $('body').css({ overflow:'hidden'});
             $window.off("mousewheel");
 
+            $('.slick-active').find('video')[0].pause();
+
         } else{
 
             $('body').css({ overflow:'visible'});
             $window.on("mousewheel", smoothWindow);
+
+            $('.slick-active').find('video')[0].play();
 
         } 
 

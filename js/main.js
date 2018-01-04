@@ -37,8 +37,8 @@ $(function(){
     
     $('#hero').slick({
           autoplay: false,
-          speed: 750,
-          infinite:true,
+          speed: 500,
+          infinite:false,
           dots:true,
           customPaging : function(slider, i) { 
             return '<a></a>';
@@ -49,13 +49,19 @@ $(function(){
           prevArrow:'.arrow-prev',
           nextArrow:'.arrow-next'
     });
-    $('#hero').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    $('#hero').on('afterChange', function(event, slick, currentSlide, nextSlide){
+    
+        $('video').each(function(){
 
-        if( $('.slick-active').next().hasClass('has-video') )
+            $(this)[0].pause();
 
-        $('.slick-active').find('video')[0].pause();
-        $('.slick-active').next().find('video')[0].play();
-        $('.slick-active').prev().find('video')[0].play();
+        });
+       
+        if( $('.slick-active').hasClass('has-video') ){
+
+            $('.slick-active video')[0].play();
+
+        }
 
     });
     

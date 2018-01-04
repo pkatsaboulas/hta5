@@ -495,6 +495,7 @@ nav{
         z-index:999;
     } 
 }
+
 .slick-list{  
         height:100%;
     }
@@ -512,16 +513,18 @@ nav{
     }
     .slick-dots{
         position:absolute;
+        z-index:4;
         width:100%;
         bottom:24px;
         text-align:center;
         li{
             display:inline;
-            margin:0 5px;
+            margin:0 7px;
             cursor:pointer;
             a{
                 display:inline-block;
-                width:30px;height:2px;
+                width:10px;height:10px;
+                border-radius:100%;
                 background:rgba(255,255,255,0.3);
                 @include transition(background 0.8s $easeOutExpo);
             }
@@ -533,16 +536,11 @@ nav{
         }
     }
 
-.slide-nav{
-    position:absolute;
-    width:100%;
-    height:60px;
-    top:50%;
-    margin-top:-30px;
-}
 .arrow-prev{
     position:absolute;
+    z-index:6;
     left:2.5%;
+    bottom:4px;
     width:10px;
     height:60px;
     background:url(../img/arrow-prev.png) no-repeat center;
@@ -554,7 +552,9 @@ nav{
 }
 .arrow-next{
     position:absolute;
+    z-index:6;
     right:2.5%;
+    bottom:4px;
     height:60px;
     width:10px;
     background:url(../img/arrow-next.png) no-repeat center;

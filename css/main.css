@@ -614,19 +614,21 @@ nav .footer-wrap .social-links li a {
 
 .slick-dots {
   position: absolute;
+  z-index: 4;
   width: 100%;
   bottom: 24px;
   text-align: center;
 }
 .slick-dots li {
   display: inline;
-  margin: 0 5px;
+  margin: 0 7px;
   cursor: pointer;
 }
 .slick-dots li a {
   display: inline-block;
-  width: 30px;
-  height: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
   background: rgba(255, 255, 255, 0.3);
   -webkit-transition: background 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   -moz-transition: background 0.8s cubic-bezier(0.19, 1, 0.22, 1);
@@ -638,17 +640,11 @@ nav .footer-wrap .social-links li a {
   background: white;
 }
 
-.slide-nav {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  top: 50%;
-  margin-top: -30px;
-}
-
 .arrow-prev {
   position: absolute;
+  z-index: 6;
   left: 2.5%;
+  bottom: 4px;
   width: 10px;
   height: 60px;
   background: url(../img/arrow-prev.png) no-repeat center;
@@ -667,7 +663,9 @@ nav .footer-wrap .social-links li a {
 
 .arrow-next {
   position: absolute;
+  z-index: 6;
   right: 2.5%;
+  bottom: 4px;
   height: 60px;
   width: 10px;
   background: url(../img/arrow-next.png) no-repeat center;
